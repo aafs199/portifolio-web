@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Meu Portfólio Online - Aline Alice Ferreira da Silva </title>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#formacao">Formação</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre">
+            <h1>Sobre mim</h1>
+            <p>Olá! Meu nome é Aline Alice Ferreira da Silva e estou iniciando minha jornada em desenvolvimento web.</p>
+            </section>
+
+        <section id="formacao">
+            <h1>Formação</h1>
+            <ul>
+                <li>Curso: Tecnologia em Ciência de Dados (UNINTER)</li>
+                <li>Formação: Licenciatura em Ciências Biológicas (UFOP) e Técnico em Química (CEFET-MG) </li>
+                </ul>
+        </section>
+
+        <section id="portfolio">
+            <h1>Portfólio</h1>
+            <p>Ainda estou construindo meu portfólio, mas aqui estão alguns links:</p>
+            <ul>
+                <li><a href="https://github.com/seu-usuario/projeto1" target="_blank">Projeto Exemplo 1 (Link para um repositório seu)</a></li>
+                </ul>
+        </section>
+
+        <section id="contato">
+            <h1>Contato</h1>
+            <form id="formContato">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </div>
+                <button type="submit">Enviar Mensagem</button>
+                <p id="feedbackMensagem" style="display:none; color: green;">Mensagem enviada com sucesso!</p>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

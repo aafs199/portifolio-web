@@ -1,0 +1,135 @@
+/* -------------------------------------- */
+/* 1. RESET BÁSICO E ESTILOS GERAIS */
+/* -------------------------------------- */
+* {
+    /* Remove margens e preenchimentos padrão do navegador */
+    margin: 0;
+    padding: 0;
+    /* Define o modelo de caixa para facilitar o layout (border-box) */
+    box-sizing: border-box;
+    /* Define uma fonte base para todo o site */
+    font-family: Arial, sans-serif;
+}
+
+body {
+    /* Cor de fundo clara para o tema inicial */
+    background-color: #f4f4f9;
+    /* Cor do texto padrão */
+    color: #333;
+    /* Permite uma transição suave para mudança de tema (Claro/Escuro) */
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* -------------------------------------- */
+/* 2. ESTILO DO CABEÇALHO (MENU DE NAVEGAÇÃO) */
+/* -------------------------------------- */
+header {
+    /* Fixa o menu no topo da página (Importante para a Single Page) */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* Cor de fundo escura para contraste */
+    background-color: #007bff;
+    /* Sombra para dar profundidade */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Garante que o menu fique acima de outros elementos */
+    z-index: 1000;
+}
+
+nav ul {
+    /* Remove os marcadores de lista */
+    list-style: none;
+    /* Centraliza os links e os exibe lado a lado */
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+nav ul li a {
+    /* Remove o sublinhado padrão dos links */
+    text-decoration: none;
+    /* Cor do texto do link (branco) */
+    color: white;
+    /* Espaçamento interno (padding) para a área de clique */
+    padding: 10px 20px;
+    /* Deixa o texto em negrito */
+    font-weight: bold;
+    /* Transição suave ao passar o mouse */
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    /* Efeito ao passar o mouse (hover) */
+    background-color: #0056b3;
+}
+
+/* -------------------------------------- */
+/* 3. ESTILO DAS SEÇÕES PRINCIPAIS */
+/* -------------------------------------- */
+main {
+    /* Adiciona um preenchimento superior para que o conteúdo não fique escondido sob o menu fixo */
+    padding-top: 60px; /* Ajuste o valor conforme a altura do seu header */
+}
+
+section {
+    /* Estilo básico do bloco de cada seção */
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    /* Adiciona um separador visual entre as seções */
+    border-bottom: 1px solid #ddd;
+}
+
+section h1 {
+    /* Estilo dos títulos das seções */
+    color: #007bff;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+}
+
+/* -------------------------------------- */
+/* 4. ESTILO DO FORMULÁRIO DE CONTATO */
+/* -------------------------------------- */
+#formContato div {
+    margin-bottom: 15px;
+}
+
+#formContato label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#formContato input[type="text"],
+#formContato input[type="email"],
+#formContato textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#formContato textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+#formContato button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#formContato button:hover {
+    background-color: #1e7e34;
+}
