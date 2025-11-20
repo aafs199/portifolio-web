@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Meu Portfólio Online - Aline Alice Ferreira da Silva </title>
+    <link rel="stylesheet" href="stile.css"> 
+    <title>Meu Portfólio - Aline Alice Ferreira da Silva</title>
 </head>
 <body>
 
@@ -16,48 +16,78 @@
                 <li><a href="#portfolio">Portfólio</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
+            <button id="alternarTema">Trocar Tema</button>
         </nav>
     </header>
 
     <main>
         <section id="sobre">
             <h1>Sobre mim</h1>
-            <p>Olá! Meu nome é Aline Alice Ferreira da Silva e estou iniciando minha jornada em desenvolvimento web.</p>
+            <p> Olá! Meu nome é Aline e estou iniciando minha jornada em Ciência de Dados. 
+                Sou uma profissional com ampla experiência na área de laboratórios, onde desenvolvi grande parte das minhas 
+                competências atuais. Atuei durante anos na gestão dos laboratórios de Química, Microbiologia e Alimentos em uma 
+                instituição de ensino profissionalizante, o que envolvia desde a preparação de aulas práticas até o acompanhamento
+                direto dos alunos.
+                No meu último emprego, fui responsável por garantir que todos os processos acontecessem com segurança, 
+                qualidade e organização. Isso incluía manter equipamentos funcionando, calibrados e disponíveis, controlar 
+                insumos, padronizar documentação, preparar materiais didáticos e apoiar o ensino-aprendizagem no dia a dia. 
+                Também tive a oportunidade de transitar por áreas novas, como panificação e confeitaria, o que ampliou minha 
+                capacidade de adaptação e de aprender rápido em contextos distintos. Essa vivência me deu uma visão muito prática 
+                de processos, além de reforçar meu senso de responsabilidade, atenção aos detalhes e habilidade de trabalhar com 
+                diferentes equipes.
+                Nos últimos meses, iniciei minha transição para a área de Ciência de Dados, um campo que me 
+                despertou curiosidade por unir lógica, análise e solução de problemas. Na graduação, estou construindo 
+                uma base sólida em programação,  estatística, banco de dados e fundamentos analíticos. Tenho me dedicado 
+                não só às disciplinas, mas também a desenvolver uma forma de pensar mais estruturada, organizada e 
+                orientada a dados. Gosto especialmente da parte analítica: entender o problema, destrinchar informações, 
+                identificar padrões e transformar tudo isso em algo claro e útil.
+                Sou uma pessoa curiosa, comprometida e que gosta de aprender continuamente. Valorizo organização, clareza,
+                técnica e responsabilidade. Acredito que minha trajetória une dois mundos: a precisão e a disciplina da 
+                área técnica, com o raciocínio lógico e analítico que estou desenvolvendo nos estudos em Ciência de Dados. 
+                E é nessa interseção que me encontro hoje, buscando evoluir, ampliar meus conhecimentos e construir um caminho 
+                sólido, com propósito e consistência.</p>
             </section>
 
         <section id="formacao">
             <h1>Formação</h1>
             <ul>
-                <li>Curso: Tecnologia em Ciência de Dados (UNINTER)</li>
-                <li>Formação: Licenciatura em Ciências Biológicas (UFOP) e Técnico em Química (CEFET-MG) </li>
-                </ul>
+                <li>Atualmente cursando Tecnologia em Ciência de Dados (UNINTER)</li>
+                <li>Graduada em Licenciatura em Ciências Biológicas (UFOP)</li>
+                <li>Técnica em Química Industrial (CEFET-MG)</li>
+            </ul>
         </section>
 
         <section id="portfolio">
             <h1>Portfólio</h1>
-            <p>Ainda estou construindo meu portfólio, mas aqui estão alguns links:</p>
             <ul>
-                <li><a href="https://github.com/seu-usuario/projeto1" target="_blank">Projeto Exemplo 1 (Link para um repositório seu)</a></li>
-                </ul>
+                <li><a href="https://docs.google.com/spreadsheets/d/1AWVmD9ieFS5u70Ug0riiZ-252sq-3Xa1XEaCpPt853Q/edit?usp=sharing" target="_blank">
+                    Projeto: Planilha de cálculo de quantidades de insumos para fabricação de produtos de panificação
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://colab.research.google.com/drive/1KW8Q5IPfk8o2elB6-I_vvjNOfAEP7iBC?usp=sharing" target="_blank">
+                        Projeto: Atividade prática de Lógica de Programação e Algoritmos
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://docs.google.com/spreadsheets/d/1ccxfBP_R9v-rTKF1F7sMA53LeVVcI-ph/edit?usp=sharing&ouid=105248417388120204541&rtpof=true&sd=true" target="_blank">
+                        Projeto: Treinamento de Perceptron (Neurônio em Excel)
+                    </a>
+                </li>
+            </ul>
+
         </section>
 
         <section id="contato">
             <h1>Contato</h1>
             <form id="formContato">
-                <div>
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
-                <div>
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" required></textarea>
-                </div>
+                <div><label for="nome">Nome:</label><input type="text" id="nome" name="nome" required></div>
+                <div><label for="email">E-mail:</label><input type="email" id="email" name="email" required></div>
+                <div><label for="mensagem">Mensagem:</label><textarea id="mensagem" name="mensagem" required></textarea></div>
                 <button type="submit">Enviar Mensagem</button>
-                <p id="feedbackMensagem" style="display:none; color: green;">Mensagem enviada com sucesso!</p>
+                <p id="feedbackMensagem" style="display:none;"></p>
             </form>
         </section>
     </main>

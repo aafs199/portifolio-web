@@ -1,75 +1,78 @@
-// 1. OBTÉM REFERÊNCIA AO FORMULÁRIO
-// Usamos o ID 'formContato' definido no HTML
-const formContato = document.getElementById('formContato');
 
-// 2. OBTÉM REFERÊNCIA À MENSAGEM DE FEEDBACK
+// VALIDAÇÃO E SIMULAÇÃO DE FORMULÁRIO
+
+const formContato = document.getElementById('formContato');
 const feedbackMensagem = document.getElementById('feedbackMensagem');
 
-// COMENTÁRIO: Adiciona um 'ouvinte de evento' para interceptar o envio do formulário.
 formContato.addEventListener('submit', function(event) {
-    // Impede o comportamento padrão do formulário (que seria recarregar a página)
     event.preventDefault(); 
-
-    // Oculta a mensagem de feedback anterior
-    feedbackMensagem.style.display = 'none';
-
-    // Chama a função principal de validação
     validarEEnviarFormulario();
 });
 
-
-/**
- * Função que verifica os campos e simula o envio.
- */
 function validarEEnviarFormulario() {
-    // 3. OBTÉM OS VALORES DOS CAMPOS
     const nome = document.getElementById('nome').value.trim();
     const email = document.getElementById('email').value.trim();
     const mensagem = document.getElementById('mensagem').value.trim();
 
-    // 4. VERIFICA SE TODOS OS CAMPOS ESTÃO PREENCHIDOS (Validação Obrigatória)
+    // Validação de Campos Vazios
     if (nome === '' || email === '' || mensagem === '') {
         alert('Por favor, preencha todos os campos do formulário.');
-        return; // Sai da função se houver campos vazios
+        return; 
     }
 
-    // 5. VERIFICA O FORMATO DO E-MAIL (Validação Obrigatória)
-    // Usa uma expressão regular simples para verificar o padrão básico:
-    // algo@algo.algo
+    // Validação do Formato de E-mail
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!regexEmail.test(email)) {
         alert('Por favor, insira um endereço de e-mail válido (ex: usuario@dominio.com).');
-        return; // Sai da função se o e-mail for inválido
+        return; 
     }
 
-    // ----------------------------------------------------
-    // SE CHEGAMOS AQUI, A VALIDAÇÃO FOI UM SUCESSO!
-    // ----------------------------------------------------
-
-    // 6. SIMULAÇÃO DO ENVIO (Obrigatório)
-    
-    // Limpa os campos do formulário
+    // Simulação de Envio
     document.getElementById('nome').value = '';
     document.getElementById('email').value = '';
     document.getElementById('mensagem').value = '';
 
-    // Exibe a mensagem de sucesso (ou poderia ser um modal/alert)
-    
-    // Opção 1: Usar o alerta (mais simples)
-    // alert('Mensagem enviada com sucesso! Obrigado pelo contato.');
-    
-    // Opção 2: Mostrar o elemento visual de feedback no próprio HTML
+    // Exibe a mensagem de sucesso
     feedbackMensagem.textContent = 'Mensagem enviada com sucesso! Entrarei em contato em breve.';
+    feedbackMensagem.style.color = 'green';
     feedbackMensagem.style.display = 'block';
     
-    // Podemos também adicionar um efeito visual de sucesso
-    formContato.style.border = '2px solid green';
-    
-    // Remove o efeito após 5 segundos para limpar a interface
+    // Oculta a mensagem após 5 segundos
     setTimeout(() => {
         feedbackMensagem.style.display = 'none';
-        formContato.style.border = 'none';
     }, 5000); 
-
-    // COMENTÁRIO: Simulação de envio concluída.
 }
+
+
+// ALTERNÂNCIA DE TEMA CLARO/ESCURO
+
+const botaoAlternarTema = document.getElementById('alternarTema');
+const body = document.body;
+
+function alternarTema() {
+    // Adiciona ou remove a classe 'tema-escuro' no body
+    body.classList.toggle('tema-escuro');
+
+    // Atualiza o texto do botão
+    if (body.classList.contains('tema-escuro')) {
+        botaoAlternarTema.textContent = 'Trocar para Tema Claro';
+        // Salva a preferência
+        localStorage.setItem('tema', 'escuro');
+    } else {
+        botaoAlternarTema.textContent = 'Trocar para Tema Escuro';
+        localStorage.setItem('tema', 'claro');
+    }
+}
+
+// Adiciona o ouvinte de evento de clique
+botaoAlternarTema.addEventListener('click', alternarTema);
+
+// Carrega a preferência do usuário ao iniciar a página
+(function carregarTema() {
+    const temaSalvo = localStorage.getItem('tema');
+    if (temaSalvo === 'escuro') {
+        body.classList.add('tema-escuro');
+        // Define o texto inicial correto do botão se o tema for escuro
+        botaoAlternarTema.textContent = 'Trocar para Tema Claro'; 
+    }
+})();
